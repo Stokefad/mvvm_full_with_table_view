@@ -1,0 +1,34 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+protocol I{{ module_info.name }}Router {
+    func openModule()
+}
+
+final class {{ module_info.name }}Router {
+    
+    private weak var controller: UIViewController?
+
+    init(controller: UIViewController) {
+        self.controller = controller
+    }
+}
+
+extension {{ module_info.name }}Router: I{{ module_info.name }}Router {
+    func openModule() {
+    
+    }
+}
+
+extension {{ module_info.name }}Router {
+    private func <#name#>(<#parameters#>) -> <#return type#> {
+        <#function body#>
+    }
+}

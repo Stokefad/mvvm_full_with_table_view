@@ -1,0 +1,49 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+protocol I{{ module_info.name }}TableViewManager {
+    func <#name#>(<#parameters#>) -> <#return type#>
+}
+
+final class {{ module_info.name }}TableViewManager: NSObject, I{{ module_info.name }}TableViewManager {
+    private unowned var tableView: UITableView
+    
+    init(tableView: UITableView) {
+        self.tableView = tableView
+        super.init()
+        setupTableView()
+    }
+    
+    func <#name#>(<#parameters#>) -> <#return type#> {
+        <#function body#>
+    }
+}
+
+extension {{ module_info.name }}TableViewManager: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withClass: NibReusable.self, for: indexPath)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 0
+    }
+}
+
+extension {{ module_info.name }}TableViewManager {
+    private func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+}

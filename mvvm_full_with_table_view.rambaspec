@@ -1,0 +1,23 @@
+# Template information section
+name: mvvm_full_with_table_view
+summary: Default implementation of mvvm pattern with components
+author: Igor Naumenko
+version: 1.0.0
+license: MIT
+
+# The declarations for code files
+code_files:
+- {name: Router.swift, path: Code/MvvmModule/Router.swift.liquid}
+- {name: ViewController.swift, path: Code/MvvmModule/ViewController.swift.liquid}
+- {name: ViewModel.swift, path: Code/MvvmModule/ViewModel.swift.liquid}
+- {name: ModuleIO/ModuleIO.swift, path: Code/MvvmModule/ModuleIO/ModuleIO.swift.liquid}
+- {name: Components/ViewController.xib, path: Code/MvvmModule/Components/ViewController.xib.liquid}
+- {name: Components/Managers/TableViewManager.swift, path: Code/MvvmModule/Components/Managers/TableViewManager.swift.liquid}
+- {name: Components/Builders/Builder.swift, path: Code/MvvmModule/Components/Builders/Builder.swift.liquid, custom_name: {{ module_info.name }}{{ custom_parameters.entity_essence }}Builder.swift}
+
+# The declarations for test files
+test_files:
+
+
+# Template dependencies
+dependencies:

@@ -1,0 +1,55 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import Foundation
+import RxSwift
+import RxCocoa
+
+protocol I{{ module_info.name }}ViewModelInput {
+    func <#name#>(<#parameters#>) -> <#return type#>
+}
+
+protocol I{{ module_info.name }}ViewModelOutput {
+    var <#variable name#>: <#type#> { get }
+}
+
+protocol I{{ module_info.name }}ViewModel {
+    var input: I{{ module_info.name }}ViewModelInput { get }
+    var output: I{{ module_info.name }}ViewModelOutput { get }
+}
+
+final class {{ module_info.name }}ViewModel: I{{ module_info.name }}ViewModel {
+    var input: I{{ module_info.name }}ViewModelInput { return self }
+    var output: I{{ module_info.name }}ViewModelOutput { return self }
+    
+    var <#variable name#>: <#type#>
+    
+    private let <#name#> = <#value#>
+    
+    init(input: I{{ module_info.name }}ModuleInput) {
+    
+    }
+}
+
+extension {{ module_info.name }}ViewModel: I{{ module_info.name }}ViewModelInput {
+    func <#name#>(<#parameters#>) -> <#return type#> {
+        <#function body#>
+    }
+}
+
+extension {{ module_info.name }}ViewModel: I{{ module_info.name }}ViewModelOutput {
+    var <#variable name#>: <#type#> {
+        <#statements#>
+    }
+}
+
+extension {{ module_info.name }}ViewModel {
+    private func <#name#>(<#parameters#>) -> <#return type#> {
+        <#function body#>
+    }
+}

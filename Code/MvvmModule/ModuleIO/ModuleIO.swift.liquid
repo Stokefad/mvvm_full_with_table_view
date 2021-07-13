@@ -1,0 +1,21 @@
+//
+//  {{ prefix }}{{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import Foundation
+
+protocol I{{ module_info.name }}ModuleOutput {
+    func <#name#>(<#parameters#>) -> <#return type#> 
+}
+
+protocol I{{ module_info.name }}ModuleInput {
+    var <#name#>: <#value#> { get }
+}
+
+struct {{ module_info.name }}ModuleInput: I{{ module_info.name }}ModuleInput {
+    let <#name#> = <#value#>
+}
